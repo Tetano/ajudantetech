@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "734228234994",
+    "firebase_url": "https://ajudantetech-2ae03.firebaseio.com",
+    "project_id": "ajudantetech-2ae03",
+    "storage_bucket": "ajudantetech-2ae03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734228234994:android:4c09e789bb53e874eec66b",
+        "android_client_info": {
+          "package_name": "com.example.ajudantetech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734228234994-u98524rle24houq5ou2jlk05ehs6f921.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZPH6WvHmJM1Q8xOBNyiX3E8x1nR0Yvuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734228234994-u98524rle24houq5ou2jlk05ehs6f921.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
