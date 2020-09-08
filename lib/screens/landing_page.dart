@@ -1,13 +1,17 @@
-import 'dart:ffi';
+import 'package:provider/provider.dart';
 import 'dart:math';
 
+import 'package:ajudantetech/models/user/user_manager.dart';
 import 'package:ajudantetech/screens/components/default_random_button.dart';
 import 'package:ajudantetech/screens/components/miniBox.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class LandingPage extends StatelessWidget {
+class landingPage extends StatelessWidget {
   final String name;
-  LandingPage({this.name});
+
+  String id = 'ixYcT8kWomvMNoagfa9t';
+  landingPage({this.name});
   @override
   Widget build(BuildContext context) {
     List<Color> cores = [Colors.red,Colors.blue,Colors.purple,Colors.pink];
@@ -30,17 +34,26 @@ class LandingPage extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
           color: Colors.yellow,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center
-            ,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              DefaultButton(color: testar(),),
-              DefaultButton(color: testar(),),
-              DefaultButton(color: testar(),),
-              MiniBox(color: testar(),number: randNum(10),)
-            ],
+          child: Consumer<UserManager>(
+            builder: (_,userManager,__){
+               return Row(
+                 mainAxisSize: MainAxisSize.max,
+                 crossAxisAlignment: CrossAxisAlignment.center,
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   RaisedButton(
+                     onPressed: () {
+                       print(userManager.getDados(id).then((value) => print(value.toString())));
+                     },
+                     color: Colors.white,
+                     child: Text("Click"),
+                   ),
+                   DefaultButton(color: testar(),),
+                   DefaultButton(color: testar(),),
+                   MiniBox(color: testar(),number: randNum(10),)
+                 ],
+               );
+             },
           ),
 
         ),
