@@ -38,11 +38,11 @@ class MyApp extends StatelessWidget {
             case '/menu':
             default:
               return MaterialPageRoute(
-                builder:(_) => BaseScreen()
+                builder:(_) => LandingPage()
               );
           }
         },
-        home: BaseScreen(),
+        home: LandingPage(),
       ),
     );
   }

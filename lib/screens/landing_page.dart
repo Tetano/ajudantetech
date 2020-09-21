@@ -7,11 +7,10 @@ import 'package:ajudantetech/screens/components/miniBox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class landingPage extends StatelessWidget {
+class LandingPage extends StatelessWidget {
   final String name;
 
-  String id = 'ixYcT8kWomvMNoagfa9t';
-  landingPage({this.name});
+  LandingPage({this.name});
   @override
   Widget build(BuildContext context) {
     List<Color> cores = [Colors.red,Colors.blue,Colors.purple,Colors.pink];
@@ -19,8 +18,6 @@ class landingPage extends StatelessWidget {
 
     Color testar(){
      int aux = random.nextInt(4);
-     print(aux);
-     print(cores[aux]);
       return cores[aux];
     }
     int randNum(int num){
@@ -43,7 +40,7 @@ class landingPage extends StatelessWidget {
                  children: [
                    RaisedButton(
                      onPressed: () {
-                       print(userManager.getDados(id).then((value) => print(value.toString())));
+                      userManager.Showdata();
                      },
                      color: Colors.white,
                      child: Text("Click"),

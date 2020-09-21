@@ -8,6 +8,8 @@ class User{
   String name;
   String confirmedPassword;
 
+
+
   User({this.id,this.email,this.password,this.name});
 
   User.fromDocument(DocumentSnapshot document){
@@ -17,6 +19,7 @@ class User{
   }
 
   DocumentReference get firestoreRef => Firestore.instance.document('users/$id');
+
 
   Future<void> saveData() async{
     await firestoreRef.setData(toMap());
