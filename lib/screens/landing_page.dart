@@ -46,7 +46,6 @@ class LandingPage extends StatelessWidget {
                      child: Text("Click"),
                    ),
                    DefaultButton(color: testar(),),
-                   DefaultButton(color: testar(),),
                    MiniBox(color: testar(),number: randNum(10),)
                  ],
                );

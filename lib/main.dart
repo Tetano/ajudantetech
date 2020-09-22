@@ -1,3 +1,4 @@
+import 'package:ajudantetech/components/form_field.dart';
 import 'package:ajudantetech/models/user/user_manager.dart';
 import 'package:ajudantetech/screens/base_screen.dart';
 import 'package:ajudantetech/screens/landing_page.dart';
@@ -20,6 +21,10 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(
         create: (_) => UserManager(),
         lazy: false,
+      ),
+      ChangeNotifierProvider(
+        create: (_) => Campos(),
+        lazy: false,
       )
       ],
       child: MaterialApp(
@@ -29,6 +34,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+        home: Scaffold(
+          body: BaseScreen(1),
+          ),
         onGenerateRoute: (settings){
           switch (settings.name){
             case '/register':
@@ -38,12 +46,11 @@ class MyApp extends StatelessWidget {
             case '/menu':
             default:
               return MaterialPageRoute(
-                builder:(_) => LandingPage()
+                  builder:(_) => LandingPage()
               );
           }
         },
-        home: LandingPage(),
-      ),
+        ),
     );
   }
 }
