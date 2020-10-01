@@ -85,18 +85,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: SizedBox(
                                     height: 40,
                                     child: RaisedButton(
-                                      color: Colors.grey[600],
-                                      onPressed: () {},
                                       child: Text(
-                                        'Registrar-se',
+                                        'Login',
                                         style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.white
+                                          color: Colors.white,
+                                          fontSize: 20,
                                         ),
                                       ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(18.0),
+                                      ),
+                                     ),
                                     ),
                                   ),
-                                )
                               ],
                             );
                         },
@@ -106,29 +107,29 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
           ),
         ),
-        floatingActionButton:
-        CircleAvatar(
+     floatingActionButton:
+     CircleAvatar(
+         foregroundColor: Colors.pink[50],
+         backgroundColor: Colors.pink[50],
+         radius: 30,
+         child: IconButton(
+             onPressed: () {
+               scaffoldKey.currentState.showSnackBar(
+                   SnackBar(
+                     content: Text(
+                         "Não se preocupe, seus dados estão seguros e Criptografados"),
+                     backgroundColor: Colors.blue[300],
+                   )
+               );
+             },
+             color: Colors.red,
+             icon: Icon(
+               Icons.security,
+               color: Colors.red,
+             )
+         )
+     ),
 
-            foregroundColor: Colors.pink[50],
-            backgroundColor: Colors.pink[50],
-            radius: 30,
-            child: IconButton(
-                onPressed: () {
-                  scaffoldKey.currentState.showSnackBar(
-                      SnackBar(
-                        content: Text(
-                            "Não se preocupe, seus dados estão seguros e Criptografados"),
-                        backgroundColor: Colors.blue[300],
-                      )
-                  );
-                },
-                color: Colors.red,
-                icon: Icon(
-                  Icons.security,
-                  color: Colors.red,
-                )
-            )
-        ),
       ),
     );
   }

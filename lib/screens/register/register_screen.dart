@@ -64,7 +64,7 @@ class RegisterScreen extends StatelessWidget {
                               color: Colors.grey[600],
                               onPressed: (){},
                               child: Text(
-                                'Registrar-se',
+                                'Cadastrar',
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.white
