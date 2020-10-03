@@ -32,6 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
           )
       ),
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Align( alignment: Alignment.center,child: Text("Bem Vindo")),
+        ),
         key: scaffoldKey,
         backgroundColor: Colors.transparent,
         body: Align(

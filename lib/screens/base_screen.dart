@@ -1,3 +1,5 @@
+import 'package:ajudantetech/components/initial_drawer.dart';
+import 'package:ajudantetech/screens/inicio/inicial_screen.dart';
 import 'package:ajudantetech/screens/login/login_screen.dart';
 import 'package:ajudantetech/screens/register/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,7 @@ class BaseScreen extends StatelessWidget {
       children: [
         LoginScreen(),
         RegisterScreen(),
+        InicialScreen(),
         LandingPage(),
         Scaffold(),
       ],
