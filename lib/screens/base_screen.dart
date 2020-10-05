@@ -19,7 +19,7 @@ class BaseScreen extends StatelessWidget {
         print(pagina);
       },
       controller: pageController,
-      scrollDirection: Axis.vertical,
+      scrollDirection: Axis.horizontal,
       children: [
         LoginScreen(),
         RegisterScreen(),

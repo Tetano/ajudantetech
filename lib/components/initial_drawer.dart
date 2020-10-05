@@ -7,7 +7,8 @@ class InitialDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-        TilesFromDrawer(),
+          TilesFromDrawer(),
+          TilesFromDrawer(),
         ],
       ),
     );
