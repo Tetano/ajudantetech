@@ -13,7 +13,7 @@ class InicialScreen extends StatelessWidget {
         gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [Colors.red, Colors.deepPurple]
+        colors: [Theme.of(context).primaryColor,Theme.of(context).backgroundColor]
     )
     ),
       child: Scaffold(
@@ -48,9 +48,6 @@ class InicialScreen extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        drawer: InitialDrawer(
-
         ),
       ),
     );

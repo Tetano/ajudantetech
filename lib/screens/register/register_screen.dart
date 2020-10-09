@@ -9,6 +9,7 @@ class RegisterScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   String tittle = "Criar Conta";
+  String confirmedPass = "";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +17,7 @@ class RegisterScreen extends StatelessWidget {
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [Colors.deepPurple,Colors.red]
+          colors: [Theme.of(context).primaryColor,Theme.of(context).backgroundColor]
       )
       ),
         child: Scaffold(
@@ -37,10 +38,25 @@ class RegisterScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       shrinkWrap: true,
                       children: [
-                          TextFormField(
-                          decoration: const InputDecoration(alignLabelWithHint: true,icon: Icon(Icons.email)),
+                        TextFormField(
+                          validator: (email){
+                            if(email.length<8){
+                              return "Email incorreto ou caracteres insuficientes";
+                            } else {
+                              return null;
+                            }
+                          },
+                            decoration: const InputDecoration(alignLabelWithHint: true,icon: Icon(Icons.email)),
                           ),
                         TextFormField(
+                          obscureText: true,
+                          validator: (passworld){
+                            if(passworld.length<6){
+                              return 'Senha Muito Curta';
+                            } else{
+                              return null;
+                            }
+                          },
                           onTap: (){
                           },
                           decoration: const InputDecoration(alignLabelWithHint: true, icon: Icon(Icons.lock),
@@ -48,12 +64,28 @@ class RegisterScreen extends StatelessWidget {
                         ),
                         ),
                         TextFormField(
+                          obscureText: true,
+                          validator: (confirmepassworld){
+                            if(confirmepassworld.length<6){
+                            return 'Senha Muito Curta';
+                            } else{
+                              return null;
+                            }
+                          },
                           onTap: (){
                           },
                           decoration: const InputDecoration(alignLabelWithHint: true, icon: Icon(Icons.lock_outline),
                           ),
                         ),
                         TextFormField(
+                          obscureText: true,
+                          validator: (nome){
+                            if(nome.length<6){
+                              return 'Digite ao menos até seu segundo nome';
+                            } else{
+                              return null;
+                            }
+                          },
                           decoration: const InputDecoration(alignLabelWithHint: true,icon: Icon(Icons.person)),
                         ),
                         Padding(
@@ -62,7 +94,14 @@ class RegisterScreen extends StatelessWidget {
                             height: 40,
                             child: RaisedButton(
                               color: Colors.grey[600],
-                              onPressed: (){},
+                              onPressed: (){
+                                if(formKey.currentState.validate() == true){
+                                   Navigator.of(context).pushNamed('/menu');
+                                  print('Valido');
+                                } else {
+                                  print('Invalido');
+                                }
+                              },
                               child: Text(
                                 'Cadastrar',
                                 style: TextStyle(

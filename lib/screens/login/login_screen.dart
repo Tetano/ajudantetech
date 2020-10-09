@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.red, Colors.deepPurple]
+              colors: [Theme.of(context).primaryColor,Theme.of(context).backgroundColor]
           )
       ),
       child: Scaffold(
@@ -56,6 +56,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               shrinkWrap: true,
                               children: [
                                 TextFormField(
+                                  validator: (email){
+                                    if(email.length<8){
+                                      return "Email incorreto ou caracteres insuficientes";
+                                    } else {
+                                      return null;
+                                    }
+                                  },
                                   decoration: const InputDecoration(
                                       alignLabelWithHint: true, icon: Padding(
                                     padding: EdgeInsets.only(left: 10),
@@ -64,6 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                       )),
                                 ),
                                 TextFormField(
+                                  validator: (password){
+                                    if(password.length < 6){
+                                      return "Senha inválida ou muito curta";
+                                    }
+                                    else {
+                                      return null;
+                                    }
+                                  },
                                   key: passKey,
 //                                  obscureText: campos.obscureText(obscure),
                                   obscureText: obscure,
@@ -89,6 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: SizedBox(
                                     height: 40,
                                     child: RaisedButton(
+                                      color: Theme.of(context).primaryColor,
                                       child: Text(
                                         'Login',
                                         style: TextStyle(
@@ -96,6 +112,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                           fontSize: 20,
                                         ),
                                       ),
+                                      onPressed: (){
+                                      if(formKey.currentState.validate()){
+                                        Navigator.of(context).pushNamed('/menu');
+                                      }
+                                      },
+
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(18.0),
                                       ),
