@@ -3,11 +3,11 @@ import 'package:ajudantetech/components/staggered_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class InicialScreen extends StatelessWidget {
+class HardwareScreen extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    int index = 9;
+
     return Container(
         decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -17,6 +17,7 @@ class InicialScreen extends StatelessWidget {
     )
     ),
       child: Scaffold(
+        drawer: InitialDrawer(),
       backgroundColor: Colors.transparent,
         body: Padding(
           padding: EdgeInsets.symmetric(vertical: 20),

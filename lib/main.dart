@@ -1,6 +1,7 @@
 import 'package:ajudantetech/components/form_field.dart';
 import 'package:ajudantetech/models/user/user_manager.dart';
 import 'package:ajudantetech/screens/base_screen.dart';
+import 'package:ajudantetech/screens/inicio/hardware_screen.dart';
 import 'package:ajudantetech/screens/landing_page.dart';
 import 'package:ajudantetech/screens/register/register_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -44,6 +45,10 @@ class MyApp extends StatelessWidget {
             case '/register':
               return MaterialPageRoute(
                   builder:(_) => RegisterScreen()
+              );
+            case '/register':
+              return MaterialPageRoute(
+                  builder:(_) => HardwareScreen()
               );
             case '/menu':
             default:
