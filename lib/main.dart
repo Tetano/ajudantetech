@@ -1,4 +1,5 @@
 import 'package:ajudantetech/components/form_field.dart';
+import 'package:ajudantetech/models/user/page_manager.dart';
 import 'package:ajudantetech/models/user/user_manager.dart';
 import 'package:ajudantetech/screens/base_screen.dart';
 import 'package:ajudantetech/screens/inicio/hardware_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(
         create: (_) => Campos(),
         lazy: false,
-      )
+      ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
