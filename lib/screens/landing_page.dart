@@ -40,7 +40,7 @@ class LandingPage extends StatelessWidget {
                  children: [
                    RaisedButton(
                      onPressed: () {
-                      userManager.Showdata();
+                      //userManager.Showdata();
                      },
                      color: Colors.white,
                      child: Text("Click"),

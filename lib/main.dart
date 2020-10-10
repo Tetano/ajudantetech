@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         create: (_) => Campos(),
         lazy: false,
       ),
+
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

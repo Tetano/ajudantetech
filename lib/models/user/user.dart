@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
 
 class User{
   String id;
@@ -7,10 +6,9 @@ class User{
   String password;
   String name;
   String confirmedPassword;
+  bool admin = false;
 
-
-
-  User({this.id,this.email,this.password,this.name});
+  User({this.id,this.email,this.password, this.name});
 
   User.fromDocument(DocumentSnapshot document){
     id = document.documentID;
@@ -20,15 +18,17 @@ class User{
 
   DocumentReference get firestoreRef => Firestore.instance.document('users/$id');
 
+  CollectionReference get cartReference =>
+      firestoreRef.collection('cart');
 
   Future<void> saveData() async{
     await firestoreRef.setData(toMap());
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toMap(){
     return {
       'name': name,
-      'emil': email,
+      'email': email,
     };
   }
 }

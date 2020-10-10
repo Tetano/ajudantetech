@@ -1,4 +1,5 @@
 
+import 'package:ajudantetech/components/drawerComponents/custom_drawer.dart';
 import 'package:ajudantetech/components/staggered_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -17,7 +18,7 @@ class HardwareScreen extends StatelessWidget {
     )
     ),
       child: Scaffold(
-
+        drawer: CustomDrawer(),
       backgroundColor: Colors.transparent,
         body: Padding(
           padding: EdgeInsets.symmetric(vertical: 20),
